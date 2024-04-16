@@ -18,6 +18,11 @@ option('enable_qt',
         value : true,
         description : 'Enable QT preview window support')
 
+option('enable_zmq',
+        type : 'boolean',
+        value : false,
+        description : 'Enable ZMQ postprocessing support')
+
 option('enable_opencv',
         type : 'boolean',
         value : true,

@@ -74,6 +74,7 @@ summary({
             'drm preview' : enable_drm,
             'egl preview' : enable_egl,
             'qt preview' : enable_qt,
+            'ZMQ postprocessing' : enable_zmq,
             'OpenCV postprocessing' : enable_opencv,
             'TFLite postprocessing' : enable_tflite,
         },

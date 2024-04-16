@@ -16,6 +16,17 @@ post_processing_headers = files([
     'tf_stage.hpp',
 ])
 
+enable_zmq = get_option('enable_zmq')
+zmq_dep = dependency('libzmq', required : false)
+if enable_zmq and zmq_dep.found()
+    rpicam_app_src += files([
+        'network_preview_stage.cpp',
+    ])
+    rpicam_app_dep += zmq_dep
+else
+    enable_zmq = false
+endif
+
 enable_opencv = get_option('enable_opencv')
 opencv_dep = dependency('opencv4', required : false)
 if enable_opencv and opencv_dep.found()

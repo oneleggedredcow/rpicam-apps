@@ -1,0 +1,7 @@
+{
+    "network_preview":
+    {
+    "connection": "tcp://192.168.0.112:5555",
+    "fps": 1.0
+    }
+}
