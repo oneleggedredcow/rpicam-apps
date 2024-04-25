@@ -1,12 +1,21 @@
 # rpicam-apps
 This is a small suite of libcamera-based applications to drive the cameras on a Raspberry Pi platform.
 
->[!WARNING]
->These applications and libraries have been renamed from `libcamera-*` to `rpicam-*`. Symbolic links are installed to allow users to keep using the old application names, but these will be deprecated soon. Users are encouraged to adopt the new application and library names as soon as possible.
-
 Build
 -----
-For usage and build instructions, see the official Raspberry Pi documentation pages [here.](https://www.raspberrypi.com/documentation/computers/camera_software.html#building-libcamera-and-rpicam-apps)
+
+```commandline
+sudo apt install -y libcamera-dev libepoxy-dev libjpeg-dev libtiff5-dev libpng-dev libdrm-dev libexif-dev cppzmq-dev
+sudo apt install -y git meson ninja-build cmake
+sudo apt install -y libboost-program-options-dev  # NOTE: This command will take 8 hours on a RPi Zero
+```
+
+```commandline
+git clone https://github.com/oneleggedredcow/rpicam-apps
+cd rpicam-apps
+meson setup build -Denable_libav=false -Denable_drm=true -Denable_egl=false -Denable_qt=false -Denable_opencv=false -Denable_tflite=false -Denable_zmq=true
+meson compile -C build -j 1
+```
 
 License
 -------
